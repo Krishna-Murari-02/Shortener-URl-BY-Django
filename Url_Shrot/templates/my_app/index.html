@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorten Url</title>
+    
+</head>
+<style>
+    body{
+        background-color: lavender;
+    }
+    .main{
+        width: 40%;
+        
+        height: 300px;
+        
+        margin: auto;
+        margin-top: 30px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+
+    }
+    .container{
+        
+        width:50%;
+        margin:auto;
+        margin-top: 40px;
+        text-align: center;
+        
+        
+    }
+    input{
+        width: 90%;
+        border-radius: 30px;
+        outline: none;
+        margin-top: 40px;
+        padding: 5px;
+    }
+    strong{
+        margin-left: 10px;
+    }
+    button{
+        border-radius: 30px;
+        margin-top: 10px;
+        background-color: blue;
+        color: honeydew;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        transition-delay: 0.3s;
+    }
+
+    button:hover{
+        background-color: maroon;
+    }
+    .model_value{
+        width: 50%;
+        margin: auto;
+        color:hotpink
+    }
+</style>
+
+
+
+<body>
+    <div class="main">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <input type="text" placeholder="Enter Your URL" name="full_url" id="full_urls">
+                <button type="submit">Get Shorten Url</button>
+            </div>
+        </form>
+        <div class="model_value">
+            <h6>Your Full URL: <strong>{{full_url}}</strong></h6>
+            <h6>Short Url: <strong>{{short_url}}</strong></h6>
+            <h6>Public API: <strong>http://localhost:8000/myapi/</strong></h6>
+        </div>
+    </div>
+</body>
+
+</html>
